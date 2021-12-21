@@ -10,7 +10,9 @@ Download the Waywo.DbSchema.Addin.dll from [Releases](https://github.com/noakese
 In your _Documents\Visual Studio Dynamics 365_ folder there is a DynamicsDevConfig.xml XML file. like this:
 
 ```xml
- <?xml version="1.0" encoding="utf-8"?> <DynamicsDevConfig xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/dynamics/2012/03/development/configuration"> 	    
+<?xml version="1.0" encoding="utf-8"?>
+<DynamicsDevConfig xmlns:i="http://www.w3.org/2001/XMLSchema-instance" 
+                   xmlns="http://schemas.microsoft.com/dynamics/2012/03/development/configuration"> 	    
   <AddInPaths xmlns:d2p1="http://schemas.microsoft.com/2003/10/Serialization/Arrays"> 		 
       <d2p1:string>C:\D365CustomAddins</d2p1:string> 	
   </AddInPaths>   
