@@ -1,5 +1,5 @@
 # d365fo-entity-schema
-This is a Visual Studio extension to generate an entity relation schema for Microsoft Dynamics 365 Finance and Operations (D365FO).
+This is a Visual Studio extension to generate an [entity relation schema](https://waywo.co.uk/2021/12/20/entity-relationship-diagrams/) for Microsoft Dynamics 365 Finance and Operations (D365FO).
 
 You can use a tool such as [dbdiagram.io](https://dbdiagram.io/d) to render the resulting [DBML](https://www.dbml.org/home/)
 
