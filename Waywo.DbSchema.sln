@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1433
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waywo.DbSchema.AddIn", "Waywo.DbSchema.AddIn\Waywo.DbSchema.AddIn.csproj", "{40A71709-910E-4780-9E66-E9F709899A83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waywo.DbSchema.AddIn.Tests", "Waywo.DbSchema.AddIn.Tests\Waywo.DbSchema.AddIn.Tests.csproj", "{70428CFB-EE9C-4591-96F0-313BD647F878}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40A71709-910E-4780-9E66-E9F709899A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40A71709-910E-4780-9E66-E9F709899A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40A71709-910E-4780-9E66-E9F709899A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40A71709-910E-4780-9E66-E9F709899A83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70428CFB-EE9C-4591-96F0-313BD647F878}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70428CFB-EE9C-4591-96F0-313BD647F878}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70428CFB-EE9C-4591-96F0-313BD647F878}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70428CFB-EE9C-4591-96F0-313BD647F878}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88EFC433-7B56-4779-8AAE-DFB89F3B3126}
+	EndGlobalSection
+EndGlobal
