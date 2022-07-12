@@ -39,11 +39,11 @@
       <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\PublicAssemblies\envdte.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.ApplicationPlatform.Environment">
-      <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\Extensions\czqvsnc0.qy3\AddinExtensions\Microsoft.Dynamics.ApplicationPlatform.Environment.dll</HintPath>
+      <HintPath>..\..\..\AOSService\PackagesLocalDirectory\bin\Microsoft.Dynamics.ApplicationPlatform.Environment.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.AX.Metadata, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\Extensions\czqvsnc0.qy3\Microsoft.Dynamics.AX.Metadata.dll</HintPath>
+      <HintPath>..\..\..\AOSService\PackagesLocalDirectory\bin\Microsoft.Dynamics.AX.Metadata.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.AX.Metadata.Core, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -51,16 +51,16 @@
     </Reference>
     <Reference Include="Microsoft.Dynamics.AX.Metadata.Storage, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\Extensions\czqvsnc0.qy3\Microsoft.Dynamics.AX.Metadata.Storage.dll</HintPath>
+      <HintPath>..\..\..\AOSService\PackagesLocalDirectory\bin\Microsoft.Dynamics.AX.Metadata.Storage.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.AX.Xpp.AxShared">
-      <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\Extensions\czqvsnc0.qy3\Microsoft.Dynamics.AX.Xpp.AxShared.dll</HintPath>
+      <HintPath>..\..\..\AOSService\PackagesLocalDirectory\bin\Microsoft.Dynamics.AX.Xpp.AxShared.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.Labels.Resolvers">
-      <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\Extensions\czqvsnc0.qy3\AddinExtensions\Microsoft.Dynamics.Framework.Tools.Labels.Resolvers.dll</HintPath>
+      <HintPath>..\..\..\AOSService\PackagesLocalDirectory\bin\Microsoft.Dynamics.Framework.Tools.Labels.Resolvers.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.MetaModel">
-      <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\Extensions\czqvsnc0.qy3\AddinExtensions\Microsoft.Dynamics.Framework.Tools.MetaModel.dll</HintPath>
+      <HintPath>..\..\..\AOSService\PackagesLocalDirectory\bin\Microsoft.Dynamics.Framework.Tools.MetaModel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.MetaModel.Core">
       <HintPath>..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Common7\IDE\Extensions\czqvsnc0.qy3\AddinExtensions\Microsoft.Dynamics.Framework.Tools.MetaModel.Core.dll</HintPath>
