@@ -1,12 +1,5 @@
 ﻿using EnvDTE;
-using Microsoft.Dynamics.Framework.Tools.MetaModel.Core;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Waywo.DbSchema.Providers;
 
 namespace Waywo.DbSchema.AddIn.Controllers

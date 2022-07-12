@@ -1,20 +1,14 @@
-﻿namespace Waywo.DbSchema.AddIn
-{
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.Composition;
-    using System.Drawing;
-    using System.Linq;
-    using System.Text;
-    using System.Windows.Forms;
-    using EnvDTE;
-    using Microsoft.Dynamics.Framework.Tools.Extensibility;
-    using Microsoft.Dynamics.Framework.Tools.MetaModel.Core;
-    using Waywo.DbSchema.AddIn;
-    using Waywo.DbSchema.AddIn.Controllers;
-    using Waywo.DbSchema.Model;
-    using Waywo.DbSchema.Providers;
+﻿using EnvDTE;
+using Microsoft.Dynamics.Framework.Tools.Extensibility;
+using Microsoft.Dynamics.Framework.Tools.MetaModel.Core;
+using System;
+using System.ComponentModel.Composition;
+using System.Windows.Forms;
+using Waywo.DbSchema.AddIn.Controllers;
+using Waywo.DbSchema.Providers;
 
+namespace Waywo.DbSchema.AddIn
+{
     [Export(typeof(IMainMenu))]
     public class MainMenuAddIn : MainMenuBase
     {
