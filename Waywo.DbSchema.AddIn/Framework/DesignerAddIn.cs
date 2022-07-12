@@ -1,18 +1,15 @@
-﻿namespace Waywo.DbSchema.AddIn
-{
-    using System;
-    using System.ComponentModel.Composition;
-    using System.Linq;
-    using System.Windows.Forms;
-    using EnvDTE;
-    using Microsoft.Dynamics.Framework.Tools.Extensibility;
-    using Microsoft.Dynamics.Framework.Tools.MetaModel.Automation.Tables;
-    using Microsoft.Dynamics.Framework.Tools.MetaModel.Core;
-    using Waywo.DbSchema.AddIn;
-    using Waywo.DbSchema.AddIn.Controllers;
-    using Waywo.DbSchema.Model;
-    using Waywo.DbSchema.Providers;
+﻿using EnvDTE;
+using Microsoft.Dynamics.Framework.Tools.Extensibility;
+using Microsoft.Dynamics.Framework.Tools.MetaModel.Automation.Tables;
+using Microsoft.Dynamics.Framework.Tools.MetaModel.Core;
+using System;
+using System.ComponentModel.Composition;
+using System.Windows.Forms;
+using Waywo.DbSchema.AddIn.Controllers;
+using Waywo.DbSchema.Providers;
 
+namespace Waywo.DbSchema.AddIn
+{
     [Export(typeof(IDesignerMenu))]
     [DesignerMenuExportMetadata(AutomationNodeType = typeof(IRelation))]
     [DesignerMenuExportMetadata(AutomationNodeType = typeof(ITable))]
