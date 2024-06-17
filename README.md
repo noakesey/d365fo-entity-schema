@@ -10,8 +10,7 @@ The extension allows you to modify the generated schema by
  - Ignoring self references
  - Reducing the complexity of the schema by only including key fields
 
-See this [blog]([url](https://waywo.co.uk/2021/12/20/entity-relationship-diagrams/
-)) for further details and example usage.
+See this [blog](https://waywo.co.uk/2021/12/20/entity-relationship-diagrams/) for further details and example usage.
 
 You can use a tool such as [dbdiagram.io](https://dbdiagram.io/d) to render the resulting DBML.
 
