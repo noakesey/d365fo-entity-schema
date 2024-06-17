@@ -14,7 +14,11 @@ See this [blog](https://waywo.co.uk/2021/12/20/entity-relationship-diagrams/) fo
 
 You can use a tool such as [dbdiagram.io](https://dbdiagram.io/d) to render the resulting DBML.
 
-You can open the extension from the _Generate entity relation schema_ menu from  the Dynamics 365 Addins menu or from the table designer.
+![image](https://github.com/noakesey/d365fo-entity-schema/assets/10977494/24226fc3-2a8b-4149-9cf7-135029fb8728)
+
+The extension is accessible from the _Generate entity relation schema_ menu from  the Dynamics 365 Addins menu or from the table designer.
+
+![image](https://github.com/noakesey/d365fo-entity-schema/assets/10977494/bef505a6-e4f8-4a60-8597-80865984058c)
 
 ### Installation
 
