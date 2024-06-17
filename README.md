@@ -10,6 +10,9 @@ The extension allows you to modify the generated schema by
  - Ignoring self references
  - Reducing the complexity of the schema by only including key fields
 
+See this [blog]([url](https://waywo.co.uk/2021/12/20/entity-relationship-diagrams/
+)) for further details and example usage.
+
 You can use a tool such as [dbdiagram.io](https://dbdiagram.io/d) to render the resulting DBML.
 
 You can open the extension from the _Generate entity relation schema_ menu from  the Dynamics 365 Addins menu or from the table designer.
