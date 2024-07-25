@@ -16,7 +16,8 @@ namespace Waywo.DbSchema.Providers
             this.provider = provider;
         }
 
-        public bool JustKeys { get; set; }
+        public bool StandardFields { get; set; }
+        public bool ExtensionFields { get; set; }
 
         public string GetSchema()
         {
@@ -25,6 +26,7 @@ namespace Waywo.DbSchema.Providers
             StringBuilder dbml = new StringBuilder();
             dbml.AppendLine("// Use a tool like https://dbdiagram.io/ to render this DBML");
             dbml.AppendLine("// https://waywo.co.uk/2021/12/20/entity-relationship-diagrams/");
+            dbml.AppendLine("// This is the VS2022 version with model support");
 
             dbml.AppendLine();
 
@@ -32,23 +34,29 @@ namespace Waywo.DbSchema.Providers
             {
                 bool tableShouldBeShown = false;
 
-                foreach (var field in table.Fields.OrderBy(f => f.KeyType))
+                foreach (var field in table.Fields.OrderBy(f => f.KeyType).ThenBy(f => f.Name))
                 {
-                    if (field.KeyType == KeyType.Primary || !this.JustKeys || provider.DataModel.Relations.Exists(r =>
-                        (r.FromTableName == table.Name || r.ToTableName == table.Name) &&
-                        (r.FromTableField == field.Name || r.ToTableField == field.Name))
+                    if (!tableShouldBeShown)
+                    {
+                        dbml.Append(string.Format("Table {0} ", table.Name));
+                        dbml.AppendLine("{");
+
+                        tableShouldBeShown = true;
+                    }
+
+                    //Always include key fields
+                    if ((field.KeyType == KeyType.Primary 
+                        || field.KeyType == KeyType.Surrogate
+                        || provider.DataModel.Relations.Exists(r => (r.FromTableName == table.Name || r.ToTableName == table.Name) &&
+                                                                    (r.FromTableField == field.Name || r.ToTableField == field.Name)))
+                        ||
+                        (field.IsExtension && this.ExtensionFields) 
+                        || 
+                        (!field.IsExtension && this.StandardFields)
                     )
                     {
-                        if (!tableShouldBeShown)
-                        {
-                            dbml.Append(string.Format("Table {0} ", table.Name));
-                            dbml.AppendLine("{");
-
-                            tableShouldBeShown = true;
-                        }
-
                         dbml.AppendLine(string.Format("  {0} {1} {2}",
-                            field.Name, field.DataType, field.KeyType == KeyType.Primary ? "[pk]" : string.Empty));
+                            field.Name, field.DataType, field.KeyType == KeyType.Primary || field.KeyType == KeyType.Surrogate ? "[pk]" : string.Empty));
                     }
                 }
 

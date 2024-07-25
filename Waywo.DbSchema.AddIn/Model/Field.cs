@@ -13,5 +13,7 @@ namespace Waywo.DbSchema.Model
 
         public KeyType KeyType { get; set; }
         public bool IsClusteredIndex { get; set; }
+
+        public bool IsExtension { get; set; }
     }
 }

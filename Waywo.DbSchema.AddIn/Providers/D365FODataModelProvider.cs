@@ -22,6 +22,7 @@ namespace Waywo.DbSchema.Providers
         public bool SimplifyTypes { get; set; }
         public bool IgnoreStaging { get; set; }
         public bool IgnoreSelfReferences { get; set; }
+        public string Model { get; set; }
 
         public D365FODataModelProvider(IMetadataProvider provider)
         {
@@ -253,6 +254,47 @@ namespace Waywo.DbSchema.Providers
             return this;
         }
 
+        public IDataModelProvider AddTablesFromModel(string modelName)
+        {
+            List<string> newTables = new List<string>();
+            newTables.AddRange(this.Tables);
+
+            if (!string.IsNullOrEmpty(modelName))
+            {
+                foreach (var tableName in this.provider.Tables.ListObjectsForModel(modelName))
+                {
+                    AxTable metaData = this.provider.Tables.Read(tableName);
+
+                    if (metaData != null && !newTables.Contains(metaData.Name))
+                    {
+                        newTables.Add(metaData.Name);
+                    }
+                }
+
+                foreach (var tableName in this.provider.TableExtensions.ListObjectsForModel(modelName))
+                {
+                    if (tableName.Contains('.'))
+                    { 
+                        string standardTableName = tableName.Split('.')[0];
+
+                        AxTable metaData = this.provider.Tables.Read(standardTableName);
+
+                        if (metaData != null && !newTables.Contains(metaData.Name))
+                        {
+                            newTables.Add(metaData.Name);
+                        }
+                    }
+                }
+
+
+                this.Tables = newTables;
+                this.Tables.Sort();
+            }
+
+            return this;
+        }
+
+
         protected List<Relation> GetRelationsBetweenTables()
         {
             var constraintAdapter = new AxTableRelationConstraintFieldAdapter(provider);
@@ -357,6 +399,16 @@ namespace Waywo.DbSchema.Providers
             }
 
             return shouldAdd;
+        }
+
+        public List<string> GetModels()
+        {
+            var manifest = this.provider.ModelManifest;
+
+            var models = manifest.ListModels();
+
+            return models.OrderBy(x => x).ToList();
+
         }
     }
 }

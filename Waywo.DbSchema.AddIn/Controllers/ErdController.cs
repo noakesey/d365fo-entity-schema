@@ -1,4 +1,5 @@
 ﻿using EnvDTE;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Waywo.DbSchema.Providers;
 
@@ -64,5 +65,6 @@ namespace Waywo.DbSchema.AddIn.Controllers
                 editPoint.Insert(dbml);
             }
         }
+
     }
 }

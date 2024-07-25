@@ -9,13 +9,17 @@ namespace Waywo.DbSchema.Providers
         IDataModelProvider AddRelatedTables();
         IDataModelProvider AddInwardTables(string tableName);
         IDataModelProvider AddOutwardTables(string tableName);
-
+        IDataModelProvider AddTablesFromModel(string modelName);
+        
+        string Model { get; set; }
         bool SimplifyTypes { get; set; }
         bool IgnoreStaging { get; set; }
         bool IgnoreSelfReferences { get; set; }
 
         DataModel DataModel { get; set; }
         List<string> Tables { get; set; }
+
+        List<string> GetModels();
 
         IDataModelProvider GenerateDataModel();
     }

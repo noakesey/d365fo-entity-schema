@@ -14,5 +14,6 @@ namespace Waywo.DbSchema.AddIn.Controllers
 
         void GetDBML();
         void UseActiveDocument();
+
     }
 }

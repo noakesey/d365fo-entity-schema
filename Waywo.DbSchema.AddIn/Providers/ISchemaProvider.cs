@@ -8,7 +8,8 @@ namespace Waywo.DbSchema.Providers
 {
     public interface ISchemaProvider
     {
-        bool JustKeys { get; set; }
+        bool StandardFields { get; set; }
+        bool ExtensionFields {  get; set; }
 
         string GetSchema();
     }

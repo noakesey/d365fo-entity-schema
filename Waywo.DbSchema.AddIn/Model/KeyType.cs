@@ -8,8 +8,8 @@ namespace Waywo.DbSchema.Model
 {
     public enum KeyType
     {
-        Primary,
         Surrogate,
+        Primary,
         Referential,
         None
     }
