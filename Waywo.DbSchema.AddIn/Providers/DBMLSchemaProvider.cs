@@ -16,7 +16,8 @@ namespace Waywo.DbSchema.Providers
             this.provider = provider;
         }
 
-        public bool JustKeys { get; set; }
+        public bool StandardFields { get; set; }
+        public bool ExtensionFields { get; set; }
 
         public string GetSchema()
         {
@@ -34,19 +35,24 @@ namespace Waywo.DbSchema.Providers
 
                 foreach (var field in table.Fields.OrderBy(f => f.KeyType))
                 {
-                    if (field.KeyType == KeyType.Primary || !this.JustKeys || provider.DataModel.Relations.Exists(r =>
+                    if (!tableShouldBeShown)
+                    {
+                        dbml.Append(string.Format("Table {0} ", table.Name));
+                        dbml.AppendLine("{");
+
+                        tableShouldBeShown = true;
+                    }
+
+                    //Always include key fields
+                    if ((field.KeyType == KeyType.Primary || provider.DataModel.Relations.Exists(r =>
                         (r.FromTableName == table.Name || r.ToTableName == table.Name) &&
-                        (r.FromTableField == field.Name || r.ToTableField == field.Name))
+                        (r.FromTableField == field.Name || r.ToTableField == field.Name)))
+                        ||
+                        (field.IsExtension && this.ExtensionFields) 
+                        || 
+                        (!field.IsExtension && this.StandardFields)
                     )
                     {
-                        if (!tableShouldBeShown)
-                        {
-                            dbml.Append(string.Format("Table {0} ", table.Name));
-                            dbml.AppendLine("{");
-
-                            tableShouldBeShown = true;
-                        }
-
                         dbml.AppendLine(string.Format("  {0} {1} {2}",
                             field.Name, field.DataType, field.KeyType == KeyType.Primary ? "[pk]" : string.Empty));
                     }

@@ -92,6 +92,8 @@ namespace Waywo.DbSchema.AddIn.Adapters
 
                 newField.IsClusteredIndex = clusteredIndexFields.Contains(field.Name);
 
+                newField.IsExtension = axTable.Name.Contains("Extension");
+
                 fields.Add(newField);
             }
 

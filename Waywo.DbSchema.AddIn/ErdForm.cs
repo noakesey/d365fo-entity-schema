@@ -26,7 +26,9 @@ namespace Waywo.DbSchema.AddIn
 
         private void getDBMLButton_Click(object sender, EventArgs e)
         {
-            controller.DBMLSchemaProvider.JustKeys = keysOnlyCheckBox.Checked;
+            controller.DBMLSchemaProvider.StandardFields = standardFieldsCheckBox.Checked;
+            controller.DBMLSchemaProvider.ExtensionFields = extensionFieldsCheckBox.Checked;
+
             controller.DataModelProvider.SimplifyTypes = convertEDTCheckBox.Checked;
             controller.DataModelProvider.IgnoreStaging = ignoreStagingCheckBox.Checked;
             controller.DataModelProvider.IgnoreSelfReferences = ignoreSelfReferencesCheckBox.Checked;

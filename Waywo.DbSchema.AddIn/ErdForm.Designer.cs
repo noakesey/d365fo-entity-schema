@@ -33,7 +33,7 @@
             this.ignoreSelfReferencesCheckBox = new System.Windows.Forms.CheckBox();
             this.convertEDTCheckBox = new System.Windows.Forms.CheckBox();
             this.ignoreStagingCheckBox = new System.Windows.Forms.CheckBox();
-            this.keysOnlyCheckBox = new System.Windows.Forms.CheckBox();
+            this.standardFieldsCheckBox = new System.Windows.Forms.CheckBox();
             this.tablesListBox = new System.Windows.Forms.ListBox();
             this.getDBMLButton = new System.Windows.Forms.Button();
             this.tableTextBox = new System.Windows.Forms.TextBox();
@@ -43,19 +43,21 @@
             this.addOutwardRelatedButton = new System.Windows.Forms.Button();
             this.addInwardRelatedButton = new System.Windows.Forms.Button();
             this.clearButton = new System.Windows.Forms.Button();
+            this.extensionFieldsCheckBox = new System.Windows.Forms.CheckBox();
             this.optionsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // optionsGroupBox
             // 
             this.optionsGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.optionsGroupBox.Controls.Add(this.extensionFieldsCheckBox);
             this.optionsGroupBox.Controls.Add(this.ignoreSelfReferencesCheckBox);
             this.optionsGroupBox.Controls.Add(this.convertEDTCheckBox);
             this.optionsGroupBox.Controls.Add(this.ignoreStagingCheckBox);
-            this.optionsGroupBox.Controls.Add(this.keysOnlyCheckBox);
-            this.optionsGroupBox.Location = new System.Drawing.Point(296, 317);
+            this.optionsGroupBox.Controls.Add(this.standardFieldsCheckBox);
+            this.optionsGroupBox.Location = new System.Drawing.Point(296, 290);
             this.optionsGroupBox.Name = "optionsGroupBox";
-            this.optionsGroupBox.Size = new System.Drawing.Size(174, 109);
+            this.optionsGroupBox.Size = new System.Drawing.Size(174, 136);
             this.optionsGroupBox.TabIndex = 0;
             this.optionsGroupBox.TabStop = false;
             this.optionsGroupBox.Text = "Options";
@@ -65,9 +67,9 @@
             this.ignoreSelfReferencesCheckBox.AutoSize = true;
             this.ignoreSelfReferencesCheckBox.Checked = true;
             this.ignoreSelfReferencesCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ignoreSelfReferencesCheckBox.Location = new System.Drawing.Point(6, 42);
+            this.ignoreSelfReferencesCheckBox.Location = new System.Drawing.Point(6, 63);
             this.ignoreSelfReferencesCheckBox.Name = "ignoreSelfReferencesCheckBox";
-            this.ignoreSelfReferencesCheckBox.Size = new System.Drawing.Size(128, 17);
+            this.ignoreSelfReferencesCheckBox.Size = new System.Drawing.Size(147, 19);
             this.ignoreSelfReferencesCheckBox.TabIndex = 0;
             this.ignoreSelfReferencesCheckBox.Text = "Ignore self references";
             this.ignoreSelfReferencesCheckBox.UseVisualStyleBackColor = true;
@@ -77,9 +79,9 @@
             this.convertEDTCheckBox.AutoSize = true;
             this.convertEDTCheckBox.Checked = true;
             this.convertEDTCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.convertEDTCheckBox.Location = new System.Drawing.Point(6, 86);
+            this.convertEDTCheckBox.Location = new System.Drawing.Point(6, 107);
             this.convertEDTCheckBox.Name = "convertEDTCheckBox";
-            this.convertEDTCheckBox.Size = new System.Drawing.Size(93, 17);
+            this.convertEDTCheckBox.Size = new System.Drawing.Size(103, 19);
             this.convertEDTCheckBox.TabIndex = 0;
             this.convertEDTCheckBox.Text = "Convert EDTs";
             this.convertEDTCheckBox.UseVisualStyleBackColor = true;
@@ -89,24 +91,22 @@
             this.ignoreStagingCheckBox.AutoSize = true;
             this.ignoreStagingCheckBox.Checked = true;
             this.ignoreStagingCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ignoreStagingCheckBox.Location = new System.Drawing.Point(6, 64);
+            this.ignoreStagingCheckBox.Location = new System.Drawing.Point(6, 85);
             this.ignoreStagingCheckBox.Name = "ignoreStagingCheckBox";
-            this.ignoreStagingCheckBox.Size = new System.Drawing.Size(124, 17);
+            this.ignoreStagingCheckBox.Size = new System.Drawing.Size(143, 19);
             this.ignoreStagingCheckBox.TabIndex = 0;
             this.ignoreStagingCheckBox.Text = "Ignore staging tables";
             this.ignoreStagingCheckBox.UseVisualStyleBackColor = true;
             // 
-            // keysOnlyCheckBox
+            // standardFieldsCheckBox
             // 
-            this.keysOnlyCheckBox.AutoSize = true;
-            this.keysOnlyCheckBox.Checked = true;
-            this.keysOnlyCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.keysOnlyCheckBox.Location = new System.Drawing.Point(6, 19);
-            this.keysOnlyCheckBox.Name = "keysOnlyCheckBox";
-            this.keysOnlyCheckBox.Size = new System.Drawing.Size(130, 17);
-            this.keysOnlyCheckBox.TabIndex = 0;
-            this.keysOnlyCheckBox.Text = "Minimal key fields only";
-            this.keysOnlyCheckBox.UseVisualStyleBackColor = true;
+            this.standardFieldsCheckBox.AutoSize = true;
+            this.standardFieldsCheckBox.Location = new System.Drawing.Point(6, 19);
+            this.standardFieldsCheckBox.Name = "standardFieldsCheckBox";
+            this.standardFieldsCheckBox.Size = new System.Drawing.Size(111, 19);
+            this.standardFieldsCheckBox.TabIndex = 0;
+            this.standardFieldsCheckBox.Text = "Standard fields";
+            this.standardFieldsCheckBox.UseVisualStyleBackColor = true;
             // 
             // tablesListBox
             // 
@@ -210,6 +210,16 @@
             this.clearButton.UseVisualStyleBackColor = true;
             this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
             // 
+            // extensionFieldsCheckBox
+            // 
+            this.extensionFieldsCheckBox.AutoSize = true;
+            this.extensionFieldsCheckBox.Location = new System.Drawing.Point(6, 41);
+            this.extensionFieldsCheckBox.Name = "extensionFieldsCheckBox";
+            this.extensionFieldsCheckBox.Size = new System.Drawing.Size(115, 19);
+            this.extensionFieldsCheckBox.TabIndex = 1;
+            this.extensionFieldsCheckBox.Text = "Extension fields";
+            this.extensionFieldsCheckBox.UseVisualStyleBackColor = true;
+            // 
             // ErdForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,7 +249,7 @@
 
         private System.Windows.Forms.GroupBox optionsGroupBox;
         private System.Windows.Forms.ListBox tablesListBox;
-        private System.Windows.Forms.CheckBox keysOnlyCheckBox;
+        private System.Windows.Forms.CheckBox standardFieldsCheckBox;
         private System.Windows.Forms.Button getDBMLButton;
         private System.Windows.Forms.CheckBox ignoreStagingCheckBox;
         private System.Windows.Forms.TextBox tableTextBox;
@@ -251,5 +261,6 @@
         private System.Windows.Forms.Button addInwardRelatedButton;
         private System.Windows.Forms.CheckBox convertEDTCheckBox;
         private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.CheckBox extensionFieldsCheckBox;
     }
 }
