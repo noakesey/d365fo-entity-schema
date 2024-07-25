@@ -34,30 +34,30 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Dynamics.ApplicationPlatform.Environment">
-      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\fvcaclwb.d2t\Microsoft.Dynamics.ApplicationPlatform.Environment.dll</HintPath>
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\vz5cjsi2.vtj\Microsoft.Dynamics.ApplicationPlatform.Environment.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Dynamics.AX.Metadata">
-      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\fvcaclwb.d2t\Microsoft.Dynamics.AX.Metadata.dll</HintPath>
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\vz5cjsi2.vtj\Microsoft.Dynamics.AX.Metadata.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Dynamics.AX.Metadata.Core">
       <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\5usu1uou.m21\Microsoft.Dynamics.AX.Metadata.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.AX.Metadata.Storage">
-      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\fvcaclwb.d2t\Microsoft.Dynamics.AX.Metadata.Storage.dll</HintPath>
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\vz5cjsi2.vtj\Microsoft.Dynamics.AX.Metadata.Storage.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Dynamics.AX.Xpp.AxShared">
-      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\fvcaclwb.d2t\Microsoft.Dynamics.AX.Xpp.AxShared.dll</HintPath>
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\vz5cjsi2.vtj\Microsoft.Dynamics.AX.Xpp.AxShared.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Dynamics.AX.Xpp.Redirect">
-      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\fvcaclwb.d2t\Microsoft.Dynamics.AX.Xpp.Redirect.dll</HintPath>
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\vz5cjsi2.vtj\Microsoft.Dynamics.AX.Xpp.Redirect.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Dynamics.AX.Xpp.Support">
-      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\fvcaclwb.d2t\Microsoft.Dynamics.AX.Xpp.Support.dll</HintPath>
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\vz5cjsi2.vtj\Microsoft.Dynamics.AX.Xpp.Support.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.MetaModel.Core.17.0">

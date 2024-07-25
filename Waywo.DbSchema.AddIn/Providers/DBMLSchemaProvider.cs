@@ -33,7 +33,7 @@ namespace Waywo.DbSchema.Providers
             {
                 bool tableShouldBeShown = false;
 
-                foreach (var field in table.Fields.OrderBy(f => f.KeyType))
+                foreach (var field in table.Fields.OrderBy(f => f.KeyType).ThenBy(f => f.Name))
                 {
                     if (!tableShouldBeShown)
                     {
@@ -44,9 +44,10 @@ namespace Waywo.DbSchema.Providers
                     }
 
                     //Always include key fields
-                    if ((field.KeyType == KeyType.Primary || provider.DataModel.Relations.Exists(r =>
-                        (r.FromTableName == table.Name || r.ToTableName == table.Name) &&
-                        (r.FromTableField == field.Name || r.ToTableField == field.Name)))
+                    if ((field.KeyType == KeyType.Primary 
+                        || field.KeyType == KeyType.Surrogate
+                        || provider.DataModel.Relations.Exists(r => (r.FromTableName == table.Name || r.ToTableName == table.Name) &&
+                                                                    (r.FromTableField == field.Name || r.ToTableField == field.Name)))
                         ||
                         (field.IsExtension && this.ExtensionFields) 
                         || 
@@ -54,7 +55,7 @@ namespace Waywo.DbSchema.Providers
                     )
                     {
                         dbml.AppendLine(string.Format("  {0} {1} {2}",
-                            field.Name, field.DataType, field.KeyType == KeyType.Primary ? "[pk]" : string.Empty));
+                            field.Name, field.DataType, field.KeyType == KeyType.Primary || field.KeyType == KeyType.Surrogate ? "[pk]" : string.Empty));
                     }
                 }
 
