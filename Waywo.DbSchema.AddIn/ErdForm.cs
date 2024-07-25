@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Waywo.DbSchema.AddIn.Controllers;
 
@@ -22,6 +16,8 @@ namespace Waywo.DbSchema.AddIn
             this.controller = controller;
 
             tablesListBox.DataSource = this.controller.DataModelProvider.Tables;
+
+            this.LoadModels();
         }
 
         private void getDBMLButton_Click(object sender, EventArgs e)
@@ -29,6 +25,7 @@ namespace Waywo.DbSchema.AddIn
             controller.DBMLSchemaProvider.StandardFields = standardFieldsCheckBox.Checked;
             controller.DBMLSchemaProvider.ExtensionFields = extensionFieldsCheckBox.Checked;
 
+            controller.DataModelProvider.Model = modelComboBox.Text;
             controller.DataModelProvider.SimplifyTypes = convertEDTCheckBox.Checked;
             controller.DataModelProvider.IgnoreStaging = ignoreStagingCheckBox.Checked;
             controller.DataModelProvider.IgnoreSelfReferences = ignoreSelfReferencesCheckBox.Checked;
@@ -116,6 +113,30 @@ namespace Waywo.DbSchema.AddIn
             this.controller.DataModelProvider.Tables.Clear();
             tablesListBox.DataSource = null;
             tablesListBox.DataSource = this.controller.DataModelProvider.Tables;
+        }
+
+        private void addAllFromModelButton_Click(object sender, EventArgs e)
+        {
+            var existing = this.controller.DataModelProvider.Tables.FirstOrDefault(t => t.ToUpper() == tableTextBox.Text.ToUpper());
+            if (existing == null)
+            {
+                this.controller.DataModelProvider.AddTablesFromModel(modelComboBox.Text);
+
+                tablesListBox.DataSource = null;
+                tablesListBox.DataSource = this.controller.DataModelProvider.Tables;
+
+                if (this.controller.DataModelProvider.Tables.Count > 0)
+                {
+                    tablesListBox.SelectedIndex = 0;
+                }
+            }
+        }
+
+        private void LoadModels()
+        {
+            var models = this.controller.DataModelProvider.GetModels();
+            
+            modelComboBox.Items.AddRange(models.ToArray());
         }
     }
 }

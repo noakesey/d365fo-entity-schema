@@ -26,6 +26,7 @@ namespace Waywo.DbSchema.Providers
             StringBuilder dbml = new StringBuilder();
             dbml.AppendLine("// Use a tool like https://dbdiagram.io/ to render this DBML");
             dbml.AppendLine("// https://waywo.co.uk/2021/12/20/entity-relationship-diagrams/");
+            dbml.AppendLine("// This is the VS2022 version with model support");
 
             dbml.AppendLine();
 
