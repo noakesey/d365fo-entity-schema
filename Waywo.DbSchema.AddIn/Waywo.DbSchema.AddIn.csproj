@@ -102,6 +102,7 @@
     </Compile>
     <Compile Include="Providers\D365FODataModelProvider.cs" />
     <Compile Include="Providers\DataModelProviderFactory.cs" />
+    <Compile Include="Providers\WIKISchemaProvider.cs" />
     <Compile Include="Providers\DBMLSchemaProvider.cs" />
     <Compile Include="Providers\IDataModelProvider.cs" />
     <Compile Include="Providers\ISchemaProvider.cs" />

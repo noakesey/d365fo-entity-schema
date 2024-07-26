@@ -44,7 +44,8 @@ namespace Waywo.DbSchema.Providers
                 if (!tableName.Contains("Staging") || !this.IgnoreStaging)
                 {
                     AxTable axTable = this.provider.Tables.Read(tableName);
-                    if (axTable != null)
+                    if (axTable != null && 
+                       (axTable.TableType == TableType.Regular || !this.IgnoreStaging))
                     {
                         var table = tableAdapter.Adapt(axTable, this.SimplifyTypes);
                         this.DataModel.Tables.Add(table);

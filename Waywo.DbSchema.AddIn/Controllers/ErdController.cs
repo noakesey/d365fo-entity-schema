@@ -12,11 +12,17 @@ namespace Waywo.DbSchema.AddIn.Controllers
 
         public IDataModelProvider DataModelProvider { get; set; }
         public ISchemaProvider DBMLSchemaProvider { get; set; }
+        public ISchemaProvider WIKISchemaProvider { get; set; }
 
-        public ErdController(IDataModelProvider dataModelProvider, ISchemaProvider schemaProvider, DTE dte)
+        public ErdController(
+            IDataModelProvider dataModelProvider, 
+            ISchemaProvider dbmlSchemaProvider,
+            ISchemaProvider wikiSchemaProvider,
+            DTE dte)
         {
             this.DataModelProvider = dataModelProvider;
-            this.DBMLSchemaProvider = schemaProvider;
+            this.DBMLSchemaProvider = dbmlSchemaProvider;
+            this.WIKISchemaProvider = wikiSchemaProvider;
             this.devenv = dte;
         }
 
@@ -66,5 +72,22 @@ namespace Waywo.DbSchema.AddIn.Controllers
             }
         }
 
+        public void GetWIKI()
+        {
+            if (this.DataModelProvider.Tables.Count > 0 && devenv != null)
+            {
+                string dbml = WIKISchemaProvider.GetSchema();
+
+                if (this.textDocument == null)
+                {
+                    var window = this.devenv.ItemOperations.NewFile(Name: string.Format(@"{0} WIKI.md", this.DataModelProvider.Tables[0]));
+                    this.textDocument = (TextDocument)this.devenv.ActiveDocument.Object("TextDocument");
+                }
+
+                EditPoint editPoint = this.textDocument.CreateEditPoint(this.textDocument.StartPoint);
+                editPoint.Delete(this.textDocument.EndPoint);
+                editPoint.Insert(dbml);
+            }
+        }
     }
 }
