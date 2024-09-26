@@ -236,6 +236,7 @@
             // 
             // modelComboBox
             // 
+            this.modelComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.modelComboBox.FormattingEnabled = true;
             this.modelComboBox.Location = new System.Drawing.Point(296, 174);
             this.modelComboBox.Name = "modelComboBox";
