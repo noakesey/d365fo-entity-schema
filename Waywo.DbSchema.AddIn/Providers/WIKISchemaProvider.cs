@@ -22,6 +22,7 @@ namespace Waywo.DbSchema.Providers
 
         public bool StandardFields { get; set; }
         public bool ExtensionFields { get; set; }
+        public bool MarkMandatory { get; set; }
 
         public string GetSchema()
         {
@@ -57,10 +58,22 @@ namespace Waywo.DbSchema.Providers
                 wiki.AppendLine();
                 wiki.AppendLine("##Fields");
                 wiki.AppendLine();
-                wiki.AppendLine("|**Name**|**Type**|**Key**|");
-                wiki.AppendLine("|--|--|--|");
 
-                foreach (var field in table.Fields.OrderBy(f => f.KeyType).ThenBy(f => f.Name))
+                if (!MarkMandatory)
+                {
+                    wiki.AppendLine("|**Name**|**Type**|**Key**|");
+                    wiki.AppendLine("|--|--|--|");
+                }
+                else
+                {
+                    wiki.AppendLine("|**Name**|**Type**|**Key**|**Mandatory**|");
+                    wiki.AppendLine("|--|--|--|--|");
+                }
+
+
+                foreach (var field in table.Fields.OrderBy(f => f.KeyType) // First, group by KeyType
+                    .ThenBy(f => MarkMandatory ? (f.IsMandatory ? 0 : 1) : 0) // Sort by IsMandatory if MarkMandatory is true
+                    .ThenBy(f => f.Name))
                 {
                     //Always include key fields
                     if ((field.KeyType == KeyType.Primary
@@ -73,8 +86,7 @@ namespace Waywo.DbSchema.Providers
                         (!field.IsExtension && this.StandardFields)
                     )
                     {
-                        wiki.AppendLine(string.Format("|{0}|{1}|{2}|",
-                            field.Name, field.DataType, field.KeyType == KeyType.Primary || field.KeyType == KeyType.Surrogate ? "Yes" : string.Empty));
+                        wiki.AppendLine(FormatField(field));
                     }
                 }
                 wiki.AppendLine();
@@ -82,6 +94,50 @@ namespace Waywo.DbSchema.Providers
             }
 
             return wiki.ToString();
+        }
+
+        private string FormatField(Field field)
+        {
+            // Add simple fields as necessary
+            var data = new List<string>
+            {
+                field.Name,
+                field.DataType
+            };
+
+            // Handle fields which have additional properties in output -->
+            var columnSettings = new List<string>();
+
+            if (field.KeyType == KeyType.Primary || field.KeyType == KeyType.Surrogate)
+            {
+                columnSettings.Add("Yes");
+            }
+            else
+            {
+                columnSettings.Add("");
+            }
+
+            if (MarkMandatory)
+            {
+                if (field.IsMandatory)
+                {
+                    columnSettings.Add("Yes");
+                }
+                else
+                {
+                    columnSettings.Add("");
+                }
+            }
+            // <--
+
+            var columnSettingStr = columnSettings.Count > 0 ? $"{string.Join("|", columnSettings)}" : string.Empty;
+
+            if (!string.IsNullOrEmpty(columnSettingStr))
+            {
+                data.Add(columnSettingStr);
+            }
+
+            return "|" + string.Join("|", data) + "|";
         }
     }
 }

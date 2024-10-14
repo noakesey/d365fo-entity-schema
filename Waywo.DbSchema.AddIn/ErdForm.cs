@@ -46,6 +46,7 @@ namespace Waywo.DbSchema.AddIn
 
             controller.WIKISchemaProvider.StandardFields = standardFieldsCheckBox.Checked;
             controller.WIKISchemaProvider.ExtensionFields = extensionFieldsCheckBox.Checked;
+            controller.WIKISchemaProvider.MarkMandatory = markMandatoryCheckBox.Checked;
 
             controller.DataModelProvider.Model = modelComboBox.Text;
             controller.DataModelProvider.SimplifyTypes = convertEDTCheckBox.Checked;

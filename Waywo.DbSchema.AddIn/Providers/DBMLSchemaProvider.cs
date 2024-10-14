@@ -35,9 +35,8 @@ namespace Waywo.DbSchema.Providers
             {
                 bool tableShouldBeShown = false;
 
-                foreach (var field in table.Fields.OrderBy(f => MarkMandatory ? 
-                    (f.IsMandatory ? 0 : 1) : 0) // Sort by IsMandatory if MarkMandatory is true
-                    .ThenBy(f => f.KeyType)
+                foreach (var field in table.Fields.OrderBy(f => f.KeyType) // First, group by KeyType
+                    .ThenBy(f => MarkMandatory ? (f.IsMandatory ? 0 : 1) : 0) // Sort by IsMandatory if MarkMandatory is true
                     .ThenBy(f => f.Name))
                 {
                     if (!tableShouldBeShown)
