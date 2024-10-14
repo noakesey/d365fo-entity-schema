@@ -15,5 +15,7 @@ namespace Waywo.DbSchema.Model
         public bool IsClusteredIndex { get; set; }
 
         public bool IsExtension { get; set; }
+
+        public bool IsMandatory { get; set; }
     }
 }

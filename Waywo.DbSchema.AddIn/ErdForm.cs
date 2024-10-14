@@ -24,6 +24,7 @@ namespace Waywo.DbSchema.AddIn
         {
             controller.DBMLSchemaProvider.StandardFields = standardFieldsCheckBox.Checked;
             controller.DBMLSchemaProvider.ExtensionFields = extensionFieldsCheckBox.Checked;
+            controller.DBMLSchemaProvider.MarkMandatory = markMandatoryCheckBox.Checked;
 
             controller.DataModelProvider.Model = modelComboBox.Text;
             controller.DataModelProvider.SimplifyTypes = convertEDTCheckBox.Checked;

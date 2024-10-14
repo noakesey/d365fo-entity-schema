@@ -94,6 +94,8 @@ namespace Waywo.DbSchema.AddIn.Adapters
 
                 newField.IsExtension = axTable.Name.Contains(".");
 
+                newField.IsMandatory = field.Mandatory.Equals(Microsoft.Dynamics.AX.Metadata.Core.MetaModel.NoYes.Yes);
+
                 fields.Add(newField);
             }
 

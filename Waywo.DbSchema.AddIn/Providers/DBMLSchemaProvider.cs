@@ -18,6 +18,7 @@ namespace Waywo.DbSchema.Providers
 
         public bool StandardFields { get; set; }
         public bool ExtensionFields { get; set; }
+        public bool MarkMandatory { get; set; }
 
         public string GetSchema()
         {
@@ -34,7 +35,10 @@ namespace Waywo.DbSchema.Providers
             {
                 bool tableShouldBeShown = false;
 
-                foreach (var field in table.Fields.OrderBy(f => f.KeyType).ThenBy(f => f.Name))
+                foreach (var field in table.Fields.OrderBy(f => MarkMandatory ? 
+                    (f.IsMandatory ? 0 : 1) : 0) // Sort by IsMandatory if MarkMandatory is true
+                    .ThenBy(f => f.KeyType)
+                    .ThenBy(f => f.Name))
                 {
                     if (!tableShouldBeShown)
                     {
@@ -45,18 +49,17 @@ namespace Waywo.DbSchema.Providers
                     }
 
                     //Always include key fields
-                    if ((field.KeyType == KeyType.Primary 
+                    if ((field.KeyType == KeyType.Primary
                         || field.KeyType == KeyType.Surrogate
                         || provider.DataModel.Relations.Exists(r => (r.FromTableName == table.Name || r.ToTableName == table.Name) &&
                                                                     (r.FromTableField == field.Name || r.ToTableField == field.Name)))
                         ||
-                        (field.IsExtension && this.ExtensionFields) 
-                        || 
+                        (field.IsExtension && this.ExtensionFields)
+                        ||
                         (!field.IsExtension && this.StandardFields)
                     )
                     {
-                        dbml.AppendLine(string.Format("  {0} {1} {2}",
-                            field.Name, field.DataType, field.KeyType == KeyType.Primary || field.KeyType == KeyType.Surrogate ? "[pk]" : string.Empty));
+                        dbml.AppendLine(FormatField(field));
                     }
                 }
 
@@ -101,6 +104,43 @@ namespace Waywo.DbSchema.Providers
             }
 
             return dbml.ToString();
+        }
+
+        private string FormatField(Field field)
+        {
+            // Add simple fields as necessary
+            var data = new List<string>
+            {
+                field.Name,
+                field.DataType
+            };
+
+            // Handle fields which have column settings in DBML -->
+            var columnSettings = new List<string>();
+
+            if (field.KeyType == KeyType.Primary || field.KeyType == KeyType.Surrogate)
+            {
+                columnSettings.Add("pk");
+            }
+
+            if (MarkMandatory)
+            {
+                if (field.IsMandatory)
+                {
+                    columnSettings.Add("not null");
+                }
+            }
+            // <--
+
+            var columnSettingStr = columnSettings.Count > 0 ? $"[{string.Join(", ", columnSettings)}]" : string.Empty;
+
+            if (!string.IsNullOrEmpty(columnSettingStr))
+            {
+                data.Add(columnSettingStr);
+            }
+
+            // Retaining 2 character buffer for formatting
+            return "  " + string.Join(" ", data);
         }
     }
 }
