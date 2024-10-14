@@ -42,6 +42,7 @@ namespace Waywo.DbSchema.AddIn
         {
             controller.DBMLSchemaProvider.StandardFields = standardFieldsCheckBox.Checked;
             controller.DBMLSchemaProvider.ExtensionFields = extensionFieldsCheckBox.Checked;
+            controller.DBMLSchemaProvider.MarkMandatory = markMandatoryCheckBox.Checked;
 
             controller.WIKISchemaProvider.StandardFields = standardFieldsCheckBox.Checked;
             controller.WIKISchemaProvider.ExtensionFields = extensionFieldsCheckBox.Checked;

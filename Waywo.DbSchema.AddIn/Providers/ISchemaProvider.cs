@@ -10,6 +10,7 @@ namespace Waywo.DbSchema.Providers
     {
         bool StandardFields { get; set; }
         bool ExtensionFields {  get; set; }
+        bool MarkMandatory { get; set; }
 
         string GetSchema();
     }
