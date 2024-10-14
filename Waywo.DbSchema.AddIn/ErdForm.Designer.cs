@@ -46,6 +46,7 @@
             this.clearButton = new System.Windows.Forms.Button();
             this.addAllFromModelButton = new System.Windows.Forms.Button();
             this.modelComboBox = new System.Windows.Forms.ComboBox();
+            this.getWIKIButton = new System.Windows.Forms.Button();
             this.optionsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,9 +70,9 @@
             this.extensionFieldsCheckBox.AutoSize = true;
             this.extensionFieldsCheckBox.Location = new System.Drawing.Point(6, 41);
             this.extensionFieldsCheckBox.Name = "extensionFieldsCheckBox";
-            this.extensionFieldsCheckBox.Size = new System.Drawing.Size(99, 17);
+            this.extensionFieldsCheckBox.Size = new System.Drawing.Size(136, 17);
             this.extensionFieldsCheckBox.TabIndex = 1;
-            this.extensionFieldsCheckBox.Text = "Extension fields";
+            this.extensionFieldsCheckBox.Text = "Include extension fields";
             this.extensionFieldsCheckBox.UseVisualStyleBackColor = true;
             // 
             // ignoreSelfReferencesCheckBox
@@ -105,9 +106,9 @@
             this.ignoreStagingCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ignoreStagingCheckBox.Location = new System.Drawing.Point(6, 85);
             this.ignoreStagingCheckBox.Name = "ignoreStagingCheckBox";
-            this.ignoreStagingCheckBox.Size = new System.Drawing.Size(124, 17);
+            this.ignoreStagingCheckBox.Size = new System.Drawing.Size(165, 17);
             this.ignoreStagingCheckBox.TabIndex = 0;
-            this.ignoreStagingCheckBox.Text = "Ignore staging tables";
+            this.ignoreStagingCheckBox.Text = "Ignore staging and tmp tables";
             this.ignoreStagingCheckBox.UseVisualStyleBackColor = true;
             // 
             // standardFieldsCheckBox
@@ -115,9 +116,9 @@
             this.standardFieldsCheckBox.AutoSize = true;
             this.standardFieldsCheckBox.Location = new System.Drawing.Point(6, 19);
             this.standardFieldsCheckBox.Name = "standardFieldsCheckBox";
-            this.standardFieldsCheckBox.Size = new System.Drawing.Size(96, 17);
+            this.standardFieldsCheckBox.Size = new System.Drawing.Size(129, 17);
             this.standardFieldsCheckBox.TabIndex = 0;
-            this.standardFieldsCheckBox.Text = "Standard fields";
+            this.standardFieldsCheckBox.Text = "Include non-key fields";
             this.standardFieldsCheckBox.UseVisualStyleBackColor = true;
             // 
             // tablesListBox
@@ -136,11 +137,11 @@
             // getDBMLButton
             // 
             this.getDBMLButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.getDBMLButton.Location = new System.Drawing.Point(296, 432);
+            this.getDBMLButton.Location = new System.Drawing.Point(390, 432);
             this.getDBMLButton.Name = "getDBMLButton";
-            this.getDBMLButton.Size = new System.Drawing.Size(174, 23);
+            this.getDBMLButton.Size = new System.Drawing.Size(81, 23);
             this.getDBMLButton.TabIndex = 2;
-            this.getDBMLButton.Text = "Generate DBML";
+            this.getDBMLButton.Text = "DBML";
             this.getDBMLButton.UseVisualStyleBackColor = true;
             this.getDBMLButton.Click += new System.EventHandler(this.getDBMLButton_Click);
             // 
@@ -243,6 +244,17 @@
             this.modelComboBox.Size = new System.Drawing.Size(175, 21);
             this.modelComboBox.TabIndex = 4;
             // 
+            // getWIKIButton
+            // 
+            this.getWIKIButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.getWIKIButton.Location = new System.Drawing.Point(296, 432);
+            this.getWIKIButton.Name = "getWIKIButton";
+            this.getWIKIButton.Size = new System.Drawing.Size(81, 23);
+            this.getWIKIButton.TabIndex = 2;
+            this.getWIKIButton.Text = "WIKI";
+            this.getWIKIButton.UseVisualStyleBackColor = true;
+            this.getWIKIButton.Click += new System.EventHandler(this.getWIKIButton_Click);
+            // 
             // ErdForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,6 +269,7 @@
             this.Controls.Add(this.addAllRelatedButton);
             this.Controls.Add(this.addAllFromModelButton);
             this.Controls.Add(this.addButton);
+            this.Controls.Add(this.getWIKIButton);
             this.Controls.Add(this.getDBMLButton);
             this.Controls.Add(this.tablesListBox);
             this.Controls.Add(this.optionsGroupBox);
@@ -289,5 +302,6 @@
         private System.Windows.Forms.CheckBox extensionFieldsCheckBox;
         private System.Windows.Forms.Button addAllFromModelButton;
         private System.Windows.Forms.ComboBox modelComboBox;
+        private System.Windows.Forms.Button getWIKIButton;
     }
 }

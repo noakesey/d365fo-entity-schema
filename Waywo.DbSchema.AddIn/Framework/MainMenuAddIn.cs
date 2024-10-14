@@ -46,12 +46,13 @@ namespace Waywo.DbSchema.AddIn
             {
                 Cursor.Current = Cursors.WaitCursor;
 
-
                 var dataModelProvider = DataModelProviderFactory.Create();
-                var schemaProvider = new DBMLSchemaProvider(dataModelProvider);
+                var dbmlSchemaProvider = new DBMLSchemaProvider(dataModelProvider);
+                var wikiSchemaProvider = new WIKISchemaProvider(dataModelProvider);
+
                 DTE dte = CoreUtility.ServiceProvider.GetService(typeof(DTE)) as DTE;
 
-                IErdController controller = new ErdController(dataModelProvider, schemaProvider, dte);
+                IErdController controller = new ErdController(dataModelProvider, dbmlSchemaProvider, wikiSchemaProvider, dte);
                 controller.UseActiveDocument();
 
                 ErdForm form = new ErdForm(controller);

@@ -51,10 +51,12 @@ namespace Waywo.DbSchema.AddIn
                 ITable table = (ITable)e.SelectedElement;
 
                 var dataModelProvider = DataModelProviderFactory.Create();
-                var schemaProvider = new DBMLSchemaProvider(dataModelProvider);
+                var dbmlSchemaProvider = new DBMLSchemaProvider(dataModelProvider);
+                var wikiSchemaProvider = new WIKISchemaProvider(dataModelProvider);
+
                 DTE dte = CoreUtility.ServiceProvider.GetService(typeof(DTE)) as DTE;
 
-                IErdController controller = new ErdController(dataModelProvider, schemaProvider, dte);
+                IErdController controller = new ErdController(dataModelProvider, dbmlSchemaProvider, wikiSchemaProvider, dte);
                 controller.DataModelProvider.AddTable(table.Name);
 
                 ErdForm form = new ErdForm(controller);

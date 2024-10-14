@@ -22,17 +22,34 @@ namespace Waywo.DbSchema.AddIn
 
         private void getDBMLButton_Click(object sender, EventArgs e)
         {
+            BindController();
+
+            this.Close();
+
+            controller.GetDBML();
+        }
+
+        private void getWIKIButton_Click(object sender, EventArgs e)
+        {
+            BindController();
+
+            this.Close();
+
+            controller.GetWIKI();
+        }
+
+        private void BindController()
+        {
             controller.DBMLSchemaProvider.StandardFields = standardFieldsCheckBox.Checked;
             controller.DBMLSchemaProvider.ExtensionFields = extensionFieldsCheckBox.Checked;
+
+            controller.WIKISchemaProvider.StandardFields = standardFieldsCheckBox.Checked;
+            controller.WIKISchemaProvider.ExtensionFields = extensionFieldsCheckBox.Checked;
 
             controller.DataModelProvider.Model = modelComboBox.Text;
             controller.DataModelProvider.SimplifyTypes = convertEDTCheckBox.Checked;
             controller.DataModelProvider.IgnoreStaging = ignoreStagingCheckBox.Checked;
             controller.DataModelProvider.IgnoreSelfReferences = ignoreSelfReferencesCheckBox.Checked;
-
-            this.Close();
-
-            controller.GetDBML();
         }
 
         private void addAllRelatedButton_Click(object sender, EventArgs e)
