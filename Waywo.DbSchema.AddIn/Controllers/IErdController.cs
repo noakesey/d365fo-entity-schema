@@ -11,8 +11,11 @@ namespace Waywo.DbSchema.AddIn.Controllers
     {
         IDataModelProvider DataModelProvider { get; set; }
         ISchemaProvider DBMLSchemaProvider { get; set; }
+        ISchemaProvider WIKISchemaProvider { get; set; }
 
         void GetDBML();
+        void GetWIKI();
+
         void UseActiveDocument();
 
     }
