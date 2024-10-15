@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Waywo.DbSchema.Model;
 
 namespace Waywo.DbSchema.Providers
@@ -18,6 +16,7 @@ namespace Waywo.DbSchema.Providers
 
         public bool StandardFields { get; set; }
         public bool ExtensionFields { get; set; }
+
         public bool MarkMandatory { get; set; }
 
         public string GetSchema()
@@ -35,8 +34,7 @@ namespace Waywo.DbSchema.Providers
             {
                 bool tableShouldBeShown = false;
 
-                foreach (var field in table.Fields.OrderBy(f => MarkMandatory ? 
-                    (f.IsMandatory ? 0 : 1) : 0) // Sort by IsMandatory if MarkMandatory is true
+                foreach (var field in table.Fields.OrderBy(f => f.IsMandatory && MarkMandatory ? 0 : 1)
                     .ThenBy(f => f.KeyType)
                     .ThenBy(f => f.Name))
                 {

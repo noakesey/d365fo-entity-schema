@@ -2,11 +2,6 @@
 using Microsoft.Dynamics.AX.Metadata.Providers;
 using Microsoft.Dynamics.AX.Metadata.Storage;
 using Microsoft.Dynamics.AX.Metadata.Storage.Runtime;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Waywo.DbSchema.Providers
 {

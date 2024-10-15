@@ -20,7 +20,7 @@ The extension is accessible from the _Generate entity relation schema_ menu from
 
 ![image](https://github.com/noakesey/d365fo-entity-schema/assets/10977494/bef505a6-e4f8-4a60-8597-80865984058c)
 
-### Installation
+## Installation
 
 Download the Waywo.DbSchema.Addin.dll from [Releases](https://github.com/noakesey/d365fo-entity-schema/releases). Unblock the .dll once downloaded (right click and view properties in file explorer.)
 
@@ -37,3 +37,10 @@ In your _Documents\Visual Studio Dynamics 365_ folder there is a DynamicsDevConf
 ```
 
 Copy the Waywo.DBSchema.AddIn.dll to the AddInPath folder (create the folder or change the path as necessary) and then restart Visual Studio.
+
+## Build
+The referenced libraries will be in a folder similar to the following, depending on the platform version:
+```
+C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\XXXXXXXX.YYY\
+```
+It's important to build with the libraries included with Visual Studio rather than the libraries in the AOS folder.

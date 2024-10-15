@@ -1,13 +1,6 @@
-﻿using EnvDTE;
-using Microsoft.Dynamics.Framework.Tools.MetaModel.Automation.Analytics;
-using Microsoft.Dynamics.Framework.Tools.MetaModel.Automation.DataEntityViews;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Waywo.DbSchema.Model;
-using static System.Windows.Forms.AxHost;
 
 namespace Waywo.DbSchema.Providers
 {
@@ -22,6 +15,8 @@ namespace Waywo.DbSchema.Providers
 
         public bool StandardFields { get; set; }
         public bool ExtensionFields { get; set; }
+
+        public bool MarkMandatory { get; set; }
 
         public string GetSchema()
         {
@@ -57,10 +52,12 @@ namespace Waywo.DbSchema.Providers
                 wiki.AppendLine();
                 wiki.AppendLine("##Fields");
                 wiki.AppendLine();
-                wiki.AppendLine("|**Name**|**Type**|**Key**|");
-                wiki.AppendLine("|--|--|--|");
+                wiki.AppendLine("|**Name**|**Type**|**Key**|**Mandatory**|");
+                wiki.AppendLine("|--|--|--|--|");
 
-                foreach (var field in table.Fields.OrderBy(f => f.KeyType).ThenBy(f => f.Name))
+                foreach (var field in table.Fields.OrderBy(f => f.IsMandatory && MarkMandatory ? 0 : 1)
+                    .ThenBy(f => f.KeyType)
+                    .ThenBy(f => f.Name))
                 {
                     //Always include key fields
                     if ((field.KeyType == KeyType.Primary
@@ -73,8 +70,12 @@ namespace Waywo.DbSchema.Providers
                         (!field.IsExtension && this.StandardFields)
                     )
                     {
-                        wiki.AppendLine(string.Format("|{0}|{1}|{2}|",
-                            field.Name, field.DataType, field.KeyType == KeyType.Primary || field.KeyType == KeyType.Surrogate ? "Yes" : string.Empty));
+                        wiki.AppendLine(string.Format("|{0}|{1}|{2}|{3}|",
+                            field.Name, 
+                            field.DataType, 
+                            (field.KeyType == KeyType.Primary || field.KeyType == KeyType.Surrogate) ? "Yes" : string.Empty,
+                            field.IsMandatory ? "Yes" : string.Empty)
+                        );
                     }
                 }
                 wiki.AppendLine();
