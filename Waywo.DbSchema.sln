@@ -5,6 +5,13 @@ VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Waywo.DbSchema.AddIn", "Waywo.DbSchema.AddIn\Waywo.DbSchema.AddIn.csproj", "{40A71709-910E-4780-9E66-E9F709899A83}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2F34E5BE-9E80-4820-8519-9AE2A04E3925}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Waywo.DbSchema.AddIn.NUnitTests", "Waywo.DbSchema.AddIn.NUnitTests\Waywo.DbSchema.AddIn.NUnitTests.csproj", "{4D63B1B3-5E58-495C-8B89-0857B8497772}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +22,10 @@ Global
 		{40A71709-910E-4780-9E66-E9F709899A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{40A71709-910E-4780-9E66-E9F709899A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{40A71709-910E-4780-9E66-E9F709899A83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D63B1B3-5E58-495C-8B89-0857B8497772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D63B1B3-5E58-495C-8B89-0857B8497772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D63B1B3-5E58-495C-8B89-0857B8497772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D63B1B3-5E58-495C-8B89-0857B8497772}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -61,7 +61,8 @@ namespace Waywo.DbSchema.AddIn.Adapters
                 Name = "RecId",
                 DataType = simplifyTypes ? "Long" : "RecId",
                 KeyType = (axTable.PrimaryIndex == "SurrogateKey" ? KeyType.Primary : KeyType.Surrogate),
-                IsClusteredIndex = (axTable.ClusteredIndex == "SurrogateKey")
+                IsClusteredIndex = (axTable.ClusteredIndex == "SurrogateKey"),
+                IsMandatory = true
             };
         }
 
@@ -80,6 +81,7 @@ namespace Waywo.DbSchema.AddIn.Adapters
                 if (primaryKeyFields.Contains(field.Name))
                 {
                     newField.KeyType = KeyType.Primary;
+                    newField.IsMandatory = true;
                 }
                 else if (relationFields.Contains(field.Name))
                 {
@@ -90,11 +92,18 @@ namespace Waywo.DbSchema.AddIn.Adapters
                     newField.KeyType = KeyType.None;
                 }
 
-                newField.IsClusteredIndex = clusteredIndexFields.Contains(field.Name);
+                if (clusteredIndexFields.Contains(field.Name))
+                {
+                    newField.IsClusteredIndex = true;
+                    newField.IsMandatory = true;
+                }
+
+                if (field.Mandatory.Equals(Microsoft.Dynamics.AX.Metadata.Core.MetaModel.NoYes.Yes))
+                {
+                    newField.IsMandatory = true;
+                }
 
                 newField.IsExtension = axTable.Name.Contains(".");
-
-                newField.IsMandatory = field.Mandatory.Equals(Microsoft.Dynamics.AX.Metadata.Core.MetaModel.NoYes.Yes);
 
                 fields.Add(newField);
             }
