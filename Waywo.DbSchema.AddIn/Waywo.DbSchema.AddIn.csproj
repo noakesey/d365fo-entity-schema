@@ -23,6 +23,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseWinFormsOutOfProcDesigner>True</UseWinFormsOutOfProcDesigner>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -31,57 +32,53 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseWinFormsOutOfProcDesigner>True</UseWinFormsOutOfProcDesigner>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Dynamics.ApplicationPlatform.Environment">
-      <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\p14mjwvr.io1\Microsoft.Dynamics.ApplicationPlatform.Environment.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Microsoft.Dynamics.ApplicationPlatform.Environment, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\ej3ajitu.lxk\Microsoft.Dynamics.ApplicationPlatform.Environment.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Dynamics.AX.Metadata">
-      <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\p14mjwvr.io1\Microsoft.Dynamics.AX.Metadata.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\ej3ajitu.lxk\Microsoft.Dynamics.AX.Metadata.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Dynamics.AX.Metadata.Core">
-      <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\p14mjwvr.io1\Microsoft.Dynamics.AX.Metadata.Core.dll</HintPath>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Core, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\ej3ajitu.lxk\Microsoft.Dynamics.AX.Metadata.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.Dynamics.AX.Metadata.Storage">
-      <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\p14mjwvr.io1\Microsoft.Dynamics.AX.Metadata.Storage.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Microsoft.Dynamics.AX.Metadata.Storage, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\ej3ajitu.lxk\Microsoft.Dynamics.AX.Metadata.Storage.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Dynamics.AX.Xpp.AxShared">
-      <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\p14mjwvr.io1\Microsoft.Dynamics.AX.Xpp.AxShared.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Microsoft.Dynamics.AX.Xpp.AxShared, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\ej3ajitu.lxk\Microsoft.Dynamics.AX.Xpp.AxShared.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Dynamics.AX.Xpp.Redirect">
-      <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\p14mjwvr.io1\Microsoft.Dynamics.AX.Xpp.Redirect.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Microsoft.Dynamics.AX.Xpp.Support">
-      <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\p14mjwvr.io1\Microsoft.Dynamics.AX.Xpp.Support.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Microsoft.Dynamics.AX.Xpp.Support, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\ej3ajitu.lxk\Microsoft.Dynamics.AX.Xpp.Support.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.AutomationObjects.17.0">
-      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\p14mjwvr.io1\Microsoft.Dynamics.Framework.Tools.AutomationObjects.17.0.dll</HintPath>
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\ej3ajitu.lxk\Microsoft.Dynamics.Framework.Tools.AutomationObjects.17.0.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.Configuration.17.0">
-      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\p14mjwvr.io1\Microsoft.Dynamics.Framework.Tools.Configuration.17.0.dll</HintPath>
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\ej3ajitu.lxk\Microsoft.Dynamics.Framework.Tools.Configuration.17.0.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.Core.17.0">
-      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\p14mjwvr.io1\Microsoft.Dynamics.Framework.Tools.Core.17.0.dll</HintPath>
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\ej3ajitu.lxk\Microsoft.Dynamics.Framework.Tools.Core.17.0.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.Extensibility.17.0">
-      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\p14mjwvr.io1\Microsoft.Dynamics.Framework.Tools.Extensibility.17.0.dll</HintPath>
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\ej3ajitu.lxk\Microsoft.Dynamics.Framework.Tools.Extensibility.17.0.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Dynamics.Framework.Tools.Integration">
-      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\p14mjwvr.io1\Microsoft.Dynamics.Framework.Tools.Integration.dll</HintPath>
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\ej3ajitu.lxk\Microsoft.Dynamics.Framework.Tools.Integration.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Dynamics.Framework.Tools.MetaModel.Core.17.0">
-      <HintPath>C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\p14mjwvr.io1\Microsoft.Dynamics.Framework.Tools.MetaModel.Core.17.0.dll</HintPath>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.MetaModel.17.0, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\ej3ajitu.lxk\Microsoft.Dynamics.Framework.Tools.MetaModel.17.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Dynamics.Framework.Tools.MetaModel.Core.17.0, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\ej3ajitu.lxk\Microsoft.Dynamics.Framework.Tools.MetaModel.Core.17.0.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.Interop, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.Interop.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

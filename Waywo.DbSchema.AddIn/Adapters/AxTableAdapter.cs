@@ -1,11 +1,7 @@
 ﻿using Microsoft.Dynamics.Ax.Xpp;
 using Microsoft.Dynamics.AX.Metadata.MetaModel;
 using Microsoft.Dynamics.AX.Metadata.Providers;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Waywo.DbSchema.Model;
 
 namespace Waywo.DbSchema.AddIn.Adapters

@@ -2,6 +2,8 @@
 using Microsoft.Dynamics.AX.Metadata.Providers;
 using Microsoft.Dynamics.AX.Metadata.Storage;
 using Microsoft.Dynamics.AX.Metadata.Storage.Runtime;
+using Microsoft.Dynamics.Framework.Tools.Core;
+using Microsoft.Dynamics.Framework.Tools.MetaModel.Core;
 
 namespace Waywo.DbSchema.Providers
 {
@@ -9,12 +11,8 @@ namespace Waywo.DbSchema.Providers
     {
         public static IDataModelProvider Create()
         {
-            var environment = EnvironmentFactory.GetApplicationEnvironment();
-            var packageDir = environment.Aos.PackageDirectory;
-            var runtimeProviderConfiguration = new RuntimeProviderConfiguration(packageDir);
-            var metadataProviderFactory = new MetadataProviderFactory();
-
-            IMetadataProvider provider = metadataProviderFactory.CreateRuntimeProvider(runtimeProviderConfiguration);
+            IDesignMetaModelService metaModelService = AxServiceProvider.GetService<IDesignMetaModelService>();
+            IMetadataProvider provider = metaModelService.CachedProvider.MetadataProvider;
 
             return new D365FODataModelProvider(provider);
         }
