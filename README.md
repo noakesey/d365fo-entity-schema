@@ -24,7 +24,8 @@ The extension is accessible from the _Generate entity relation schema_ menu from
 
 Download the Waywo.DbSchema.Addin.dll from [Releases](https://github.com/noakesey/d365fo-entity-schema/releases). Unblock the .dll once downloaded (right click and view properties in file explorer.)
 
-In your _Documents\Visual Studio Dynamics 365_ folder there is a DynamicsDevConfig.xml XML file. like this:
+### Virtual Machine Experience
+If you are installing this AddIn to Visual Studio within a Cloud Hosted Development Environment, you need to update the DynamicsDevConfig.xml file in your _Documents\Visual Studio Dynamics 365_ folder like this:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -36,7 +37,12 @@ In your _Documents\Visual Studio Dynamics 365_ folder there is a DynamicsDevConf
 </DynamicsDevConfig> 
 ```
 
-Copy the Waywo.DBSchema.AddIn.dll to the AddInPath folder (create the folder or change the path as necessary) and then restart Visual Studio.
+You can then copy the Waywo.DBSchema.AddIn.dll file to the folder specified above (create the folder or change the path as necessary) and then restart Visual Studio.
+
+### Unified Developer Experience
+If you are installing this AddIn to Visual Studio under the Unified Developer experience (i.e. you have installed Visual Studio locally) then you will need to copy the Waywo.DBSchema.AddIn.dll file directly to the D365FO AddIn folder which will be somewhere like the following depending on the edition of Visual Studio you have installed:
+
+```C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\ej3ajitu.lxk\AddinExtensions```
 
 ## Build
 The referenced libraries will be in a folder similar to the following, depending on the platform version:
@@ -44,3 +50,9 @@ The referenced libraries will be in a folder similar to the following, depending
 C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\XXXXXXXX.YYY\
 ```
 It's important to build with the libraries included with Visual Studio rather than the libraries in the AOS folder.
+
+It seems safe to ignore the following error message:
+```
+Error	NU1101	Unable to find package Microsoft.Dynamics.AX.Metadata.Core. No packages exist with this id in source(s): Microsoft Visual Studio Offline Packages.
+```
+
