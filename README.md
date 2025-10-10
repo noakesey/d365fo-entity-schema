@@ -1,6 +1,8 @@
 # d365fo-entity-schema
 This is a Visual Studio extension to generate an [entity relation schema](https://waywo.co.uk/2021/12/20/entity-relationship-diagrams/) for Microsoft Dynamics 365 Finance and Operations (D365FO) using Database Markup Language ([DBML](https://www.dbml.org/home/))
 
+There is also an [online ERD generator](https://daxonline.org/d365/entity-relation-schema.html) which is useful if you don't have access to a development environment.
+
 The extension allows you to modify the generated schema by
  - Adding / Removing individual tables
  - Adding all tables that have an inbound relation to the selected table
