@@ -42,9 +42,11 @@ If you are installing this AddIn to Visual Studio within a Cloud Hosted Developm
 You can then copy the Waywo.DBSchema.AddIn.dll file to the folder specified above (create the folder or change the path as necessary) and then restart Visual Studio.
 
 ### Unified Developer Experience
-If you are installing this AddIn to Visual Studio under the Unified Developer experience (i.e. you have installed Visual Studio locally) then you will need to copy the Waywo.DBSchema.AddIn.dll file directly to the D365FO AddIn folder which will be somewhere like the following depending on the edition of Visual Studio you have installed:
+If you are installing this AddIn to Visual Studio under the Unified Developer experience (i.e. you have installed Visual Studio locally) then you will need to copy the Waywo.DBSchema.AddIn.dll file directly to the Visual Studio D365FO AddIn folder which will be somewhere like the following depending on the edition and version of Visual Studio you have installed:
 
-```C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\ej3ajitu.lxk\AddinExtensions```
+```C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions\jalba1yr.dr0\AddinExtensions```
+
+If the  _jalba1yr.dr0_ folder doesn't exist, you can find the correct folder, by using file explorer to search for Microsoft.Dynamics.Framework.Tools.AddIns.Common under C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\Extensions.
 
 ## Build
 The referenced libraries will be in a folder similar to the following, depending on the platform version:
